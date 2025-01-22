@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> 
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 4755 50" style="enable-background:new 0 0 4755 50;" xml:space="preserve"> 
+<!-- Aquí va tu contenido SVG --> 
+
+<style>
+    :root {
+    --lila-oscuro: #C8A2C8;
+    --white: #ffffff;
+    --perla: #fff3e3;
+    --negro: #000000;
+    --lila-soft: #F3D9FF;
+    --palo-rosa: #ffd9e0;
+    --verde-agua: #75dad2;
+    --amarillo-soft: #ffe699;
+    --celeste-soft: #b8fef6;
+}
+</style>
+    <g>
+        <rect x="0"  y="0" width= "951" height="50" style= "fill: var(--lila-soft) "></rect>
+        <rect x="951" y="0" width= "951" height="50" style= "fill: var(--amarillo-soft)"></rect>
+        <rect x="1902" y="0" width= "951" height="50" style= "fill: var(--palo-rosa)"></rect>
+        <rect x="2853" y="0" width= "951" height="50" style= "fill: var(--verde-agua)"></rect>
+        <rect x="3804" y="0" width= "951" height="50" style= "fill: var(--celeste-soft)"></rect> 
+    </g>
+
+</svg>

@@ -1,0 +1,648 @@
+/* Fuente: Merienda  -> Google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+:root {
+    --lila-oscuro: rgb(200, 162, 200);
+    --white: #ffffff;
+    --perla: #fff3e3;
+    --negro: #000000;
+    --lila-soft: #F3D9FF;
+    --palo-rosa: rgb(255, 217, 224);
+    --verde-agua: rgb(117, 218, 210);
+    --amarillo-soft: #ffe699;
+    --celeste-soft: #b8fef6;
+    --color-text: #6f7170;
+}
+
+body {
+    font-family: "Merienda", serif;
+    /* color de fuente */
+    color: var(--color-text);
+    /* background-color: var(--perla); */
+    background-image: linear-gradient(to top, var(--lila-soft) 0% , var(--perla) 5%);
+    margin: 0;
+}
+html{
+    
+/*     font-size: 62.5%;*/ 
+   box-sizing: border-box;
+}
+
+*,*:before,*:after{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* FONTSS */
+h1{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+h3{
+    font-size: 1.5rem;
+}
+
+/* 1903 sin position */
+.contanier_header {
+    position: fixed;
+    width: 100%;
+    transition: 0.2s;
+    background-color: var(--lila-oscuro);
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    z-index: 2;
+}
+
+
+.layout::after{
+    background-image: url(../imgs/figure.svg);
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+    z-index: 1;
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 15px;
+    box-shadow: 1px 1px 20px rgba(200, 162, 200, .9);
+}
+
+/* desplazamiento(scroll) - NAVBAR - BARRA DE COLORES */
+
+.scroll-barraColores-down::after{
+    position: fixed;
+    transform: translateY(4.5rem);
+    transition: transform .3s;
+}
+
+.scroll-barraColores-up::after{
+    position: absolute;
+    transform: translateY(3.5rem);
+    transition: transform .5s;
+}
+
+/* desplazamiento(scroll) - NAVBAR  - LOGO */
+
+.scroll-logo-down{
+    position: absolute;
+    transform: rotateY(360deg) translateY(-20rem);
+    transition: transform 2s;
+}
+
+
+.scroll-logo-up{
+    position: absolute;
+    transform: rotateY(0deg);
+    transition: transform 2s;
+}
+
+/* desplazamiento(scroll) - NAVBAR  - CONTACT */
+
+.scroll-contact-down{
+   position: relative;
+    transform: translateY(-21rem);
+    transition: transform 1s;
+}
+
+.scroll-contact-up{
+    position: relative;
+    transform: translateY(0em);
+    transition: transform 1s;
+    /* transform: rotateY(0deg);
+    transition: transform 2s; */
+}
+
+/* Redes sociales del lado izquierdo (inst - fb) */
+
+#rrss{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+}
+
+/* verlo con Mario, para hacerlo con transition */
+.scroll-rrss-down{
+    position: fixed;
+    transition: ease-in-out 2s;
+    top: 0;
+    left: 0;
+    height: 15%;
+}
+
+.scroll-rrss-up{
+    position: fixed;
+    transform: translateY();
+    transition: transform 2s;
+}
+
+
+.navegable ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1rem;
+    margin: 1rem;
+}
+
+
+.navegable ul li{
+    list-style-type: none;
+}
+
+
+.navegable ul a, #contact a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Merienda';
+    margin: 1em;
+    position: relative;
+    transition:  .8s;
+}
+
+/* ::after es un pseudoelemento que no esta explicito en HTML, pero que va despues de todo en un contenedor */
+ul a::after, a::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 1px;
+    width: 100%;
+    left: 0%;
+    background-color: var(--perla);
+    transition: .3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+}
+
+
+/* Se utiliza media querys para evitar aplicar esta psuedoclase(efecto del pasa puntero sobre elemento)
+a dispositivos moviles*/
+@media screen and (min-width:1400px) {
+    
+    .navegable ul a:hover{
+        color: var(--white);
+        font-weight: bold;
+    }
+
+    #contact a:hover{
+        color: var(--white);
+    }
+
+    ul a:hover::after, a:hover::after{
+        transform: scaleX(1);
+    }
+}
+
+#vertical-line{
+    height: 20px;
+    position: relative;
+    right: 0.8rem;
+    top: .2rem;
+
+}
+
+#carrito-icon{
+    position: relative;
+    right: 1.8rem;
+}
+#contact {
+    display: inline;
+    margin: 1rem;
+    padding-top: 1rem;
+    /* padding-bottom: 1rem; */
+}
+
+figure{
+    position: relative;
+    /* right: 30rem; */
+}
+#logo {
+    max-width: 20%;
+    position: relative;
+    z-index: 3;
+    margin: 1rem;
+}
+
+/* MEDIA QUERY - RESPONSIVE DESIGN NAV */
+
+/* TABLETS en adelante */
+@media (min-width:768px){
+   
+    figure{
+        position: absolute;
+        right: 30rem;
+    }
+    #logo {
+        max-width: 15%;
+        position: relative;
+        z-index: 3;
+        top: 1rem;
+    }
+    #logov2{
+        display: none;
+    }
+    #carrito-icon-cel, .icon-menu{
+        display: none;
+    }
+    
+    .icon-close{
+        display: none;
+    }
+    /* Del carrusel */
+
+    .carrusel{
+        position: relative;
+        top: 4.5rem;
+    }
+    .width-edit{
+        height: 1000px;
+    }
+
+
+    /* Se aplica grid en este MediaQ para el padre sameFrame (seccion_More_solds y seccion_cifras) */
+    .sameFrame{
+        display: grid;
+        grid-template-rows: repeat(3,800px);
+        row-gap: 8rem;
+    }
+
+    /* //////////////// DISEÑO SECCIÓN 02 ///////////////////// */
+
+             /* Alejar sección 2 */
+            
+             .seccion_More_solds{
+            
+                margin-top: 5rem;
+            
+            }
+
+            .seccion_More_solds{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .cakes_moreSolds{
+                display: grid;
+                grid-template-columns: repeat(3,600px);
+                text-align: center;
+            }
+
+                .cakes_moreSolds article{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 2rem;
+            }
+
+            .boton-tortas{
+                /* se pone en la segunda columna */
+                grid-column: 2/3;
+            }
+            
+          /* //////////////// DISEÑO SECCIÓN 03 ///////////////////// */
+
+          /* Alejar sección 03 */
+          .seccion_cifras{
+                
+          }
+
+}
+
+/* Antes de los 760px(celulares), aplicamos reverse para que el menú esté en la otra posición  */
+@media (max-width:767px){
+   
+    #logov2 {
+        max-width: 60%;
+        position: relative;
+        z-index: 0;
+        padding: 1rem;
+    }
+    #logo{
+        display: none;
+    }
+
+    #rrss, #carrito-icon, #vertical-line,#items,#contact,.layout::after {
+        display: none;
+    }
+   
+    #carrito-icon-cel{
+        position: relative;
+        width: 600px;
+        font-size: 1.2rem;
+        height: auto;
+        padding: 0rem 1rem;
+    }
+    #carrito-icon-cel a{
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    .contanier_header{
+        position: relative;
+        display: flex;  
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navegable ul{
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 6;
+        background-color: rgba(140, 0, 255, 0.1);   
+        backdrop-filter: blur(60px);
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+        /* Esconder los li del navbar */
+        overflow: hidden;
+    }
+
+    .navegable ul li{
+        font-size: 1.5rem;
+        padding: 2rem;
+        font-weight: 800;
+    }
+
+    .icon-menu{
+            display: block;
+            font-size: 2.5rem;
+            cursor: pointer;
+            right   : 0;
+            margin: 0rem 3rem;
+    }
+    .icon-close{
+            /* Se coloca en position: absolute; ya que queremos moverlo a otro lugar,
+            por más que forme parte de un flex con los otros elemntos del navbar */
+            position: absolute;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 1.5rem;
+            top: 0;
+            left: 0;
+    }
+
+    #menuList{
+        transition: all 0.5s;
+    }
+
+    .sameFrame{
+        display: grid;
+        grid-template-rows: repeat(3,800px);
+    }
+    
+}
+
+@media (min-width:767px) and (max-width:1300px) {
+    
+    /* Layout de las secciones del main */
+    .principal-content{
+        display: grid;
+        grid-template-rows: repeat(3, 900px);
+        row-gap: 10rem;
+    }
+
+    #contact{
+        display: none;
+    }
+    #rrss{
+        position: fixed;
+        top: 0;
+        left: 0;
+    }    
+    .contanier_header{
+        position: fixed;
+        height: 4.5rem;
+        max-width: 100%;
+    }   
+
+    .width-edit{
+        height: 430px;
+    }
+    /* alejar la seccion 2 */
+    .seccion_More_solds{
+        margin-top: 5rem;
+    }
+    
+    .sameFrame{
+        display: grid;
+        grid-template-rows: repeat(3,800px);
+        row-gap: 40rem;
+    }
+    
+    /* diseño resposnivo , sección 02 */
+
+    .cakes_moreSolds{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+/* PRUEBA PARTE MAIN */
+
+.principal-content{
+
+    /* PARTIMOS AQUI, DEBEMOS DETERMINAR CUANTOS FRAMES AÑADIR O COMO TRABAJAR LAS DEMÁS SECCIONES DE LA PAGINA */
+    /* display: grid;
+    grid-template-rows: repeat(2,1000px);  */
+}
+
+
+
+#myCarousel{
+    z-index: 0;
+}
+
+.width-edit{
+    z-index: 0;
+    margin-bottom: 4.5rem;
+}
+
+/* Disposición de botones dentro del carrusel*/
+.width-edit .botones{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Disposición de los indicadores dentro del carrusel */
+
+.carousel-indicators{
+    all:unset;
+}
+
+.width-edit .indicadores-carrusel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0;
+    top: -1rem;
+    z-index: 2;
+}
+
+
+
+/* Estilos a los buttons de navegación */
+
+.carousel-control-pre
+, .carousel-control-nex{
+
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25%;
+    width: 2.5%;
+    height: 3%;
+    border-color: none;
+    padding: .5rem .2rem;
+    margin: 0rem 2rem;
+    /* padding-top: 1rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 3rem; */
+    background: 0;
+    background-color: rgba(200, 162, 200, .7);
+}
+
+.carousel-control-pre{
+    left: 0;
+}
+
+.carousel-control-nex{
+    right: 0;
+}
+
+button{
+    /* ELIMINAMOS LAS PROPIEDADES INHERIT(Heredadas) por bootstrap*/
+    all: unset;
+    
+}
+button:hover{
+    background-color: rgba(108, 40, 108, 0.7);
+}
+
+.align-arrows{
+    /* le damos flexibilidad */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* definimos frame para las secciones después del carrusel*/
+.sameFrame{
+    display: grid;
+    grid-template-rows: repeat(3,900px);
+    /* width: 50%; */
+}
+
+
+/* //////////////// DISEÑO SECCIÓN 02 ///////////////////// */
+
+
+
+.desc h3{
+    font-weight: bolder;
+}
+
+
+.buttPlusCake{
+    color: var(--white);
+    background-color: var(--lila-oscuro);
+    width: 120px;
+    height: 20px;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4%;
+    box-shadow: 2px 2px 8px rgba(200, 162, 200, .9);
+    /* border-radius: 20%; */
+}
+
+.buttPlusCake:hover{
+    color: var(--white);
+    font-weight: bold;
+}
+
+
+/* //////////////// DISEÑO SECCIÓN 03 - Tortas más vendidas ///////////////////// */
+
+
+.seccion_cifras{
+    background-image: url(/imgs/metricas_rendi_1.svg);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+
+}
+
+.seccion_cifras_2{
+    background-image: url(/imgs/metricas_rend_2.svg);
+    width: 100%;
+    height: 100%;
+    right: .5rem;
+    position: relative;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/*
+.backdrop { 
+    z-index: 5;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2); 
+    /* Fondo semi-transparente 
+    backdrop-filter: blur(10px); 
+    /* Aplica un desenfoque de 10px 
+    width: 100%; 
+    height: 100%;
+    padding: 20px; 
+*/
+    /* color de texto */
+   /* color: var(--white);
+}/*
+
+.backdrop .context{
+    width: 300px;
+}
+
